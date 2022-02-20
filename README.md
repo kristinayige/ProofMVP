@@ -1,8 +1,9 @@
 # 🅿️ Proof: Your on-chain work identity
 
 ***Turn your wallet into your web3 contribution portfolio***\
-members can own their work, build up their contribution portfolio, and help organizers better understand and develop their organizations.
-Please checkout our website for details: https://www.myproof.xyz/
+members can own their work, build up their contribution portfolio, and help organizers better understand and develop their organizations.\
+We are addressing recruiting and engagement issues through constructing an on-chain work identity, here is a [walkthrough](https://docs.google.com/presentation/d/137Zc5FKnZxCuSjd7xnYg4RJO8goLhIkIOJSDEeEdJmc/edit?usp=sharing) of our ideas and prototype built this week.\
+Please checkout our website for more information: https://www.myproof.xyz/
 
 # 🪜 Installation
 To use this app, you'll need to do the following:
@@ -17,3 +18,4 @@ REACT_APP_PINATA_SECRET = <pinata-secret>
 REACT_APP_ALCHEMY_KEY = https://eth-ropsten.alchemyapi.io/v2/<alchemy-key>
 ```
 4. Run `npm start`in your terminal to open app in your browser at http://localhost:3000/.
+5. Our smart contract is deployed on Ropsten Test Network, to view your minted Proof badge in your wallet, please switch to Ropsten Test Network and claim your NFT!

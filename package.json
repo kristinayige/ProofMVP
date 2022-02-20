@@ -58,5 +58,9 @@
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "solhint": "^3.3.7",
     "solidity-coverage": "^0.7.19"
+  },
+  "engines": {
+    "npm": "6.14.15",
+    "node": "14.18.1"
   }
 }
