@@ -2,7 +2,7 @@
 
 ***Turn your wallet into your web3 contribution portfolio***\
 members can own their work, build up their contribution portfolio, and help organizers better understand and develop their organizations.\
-We are addressing recruiting and engagement issues through constructing an on-chain work identity, here is a [walkthrough](https://docs.google.com/presentation/d/137Zc5FKnZxCuSjd7xnYg4RJO8goLhIkIOJSDEeEdJmc/edit?usp=sharing) of our ideas and prototype built this week.\
+We are addressing ***DAO*** recruiting and engagement issues through constructing an on-chain work identity, here is a [walkthrough](https://docs.google.com/presentation/d/137Zc5FKnZxCuSjd7xnYg4RJO8goLhIkIOJSDEeEdJmc/edit?usp=sharing) of our ideas and prototype built this week.\
 Please checkout our website for more information: https://www.myproof.xyz/
 
 # 🪜 Installation
