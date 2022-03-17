@@ -103,17 +103,14 @@ const Minter = (props) => {
         )}
       </button>
       
-      <button id="viewProfile" onClick={() => window.open('../templates/portfolio.html')}>
+      {/* <button id="viewProfile" onClick={() => window.open('../templates/portfolio.html')}>
           <span>View Profile</span>
-      </button>
-      
-    {/* <BrowserRouter>
-      <Link to={{ pathname: "../templates/user.html" }} className="btn btn-primary">View Profile</Link>
-    </BrowserRouter> */}
-
+      </button> */}
+    
+    <Link to="/portfolio">View Profile</Link>
 
       <br></br>
-      <h1 id="title">🅿️ Proof of WORK</h1>
+      <h1 id="title">🅿️ Proof of Work</h1>
       <p>
         Turn your wallet into Web3 work portfolio! Get NFTs for your work!
       </p>
