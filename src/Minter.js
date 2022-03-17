@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
+import Portfolio from "./pages/Portfolio";
 import {
   connectWallet,
   getCurrentWalletConnected,
@@ -102,12 +103,8 @@ const Minter = (props) => {
           <span>Connect Wallet</span>
         )}
       </button>
-      
-      {/* <button id="viewProfile" onClick={() => window.open('../templates/portfolio.html')}>
-          <span>View Profile</span>
-      </button> */}
-    
-    <Link to="/portfolio">View Profile</Link>
+
+      <Link to="/portfolio">View Profile</Link>
 
       <br></br>
       <h1 id="title">🅿️ Proof of Work</h1>
