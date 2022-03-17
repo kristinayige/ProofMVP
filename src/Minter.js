@@ -103,7 +103,7 @@ const Minter = (props) => {
         )}
       </button>
       
-      <button id="viewProfile" onClick={() => window.open('../templates/base.html')}>
+      <button id="viewProfile" onClick={() => window.open('../templates/portfolio.html')}>
           <span>View Profile</span>
       </button>
       
