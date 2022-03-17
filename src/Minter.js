@@ -67,8 +67,7 @@ const Minter = (props) => {
   // example DAOAddr = '0x12bd9048b419838e25046040dcd297ab16850280';
   // example walletAddress = '0x41532c0decc835293dd1e3edd47eb5eb7a7677cf';
   const onTxnPressed = async () => {
-    const txns = await getPayments('0x12bd9048b419838e25046040dcd297ab16850280', '0x41532c0decc835293dd1e3edd47eb5eb7a7677cf')
-    console.log(txns);
+    const txns = await getPayments('0x12bd9048b419838e25046040dcd297ab16850280', '0x41532c0decc835293dd1e3edd47eb5eb7a7677cf');
     setTransaction(txns);
   }
 
@@ -104,7 +103,11 @@ const Minter = (props) => {
         )}
       </button>
 
-      <Link to="/portfolio">View Profile</Link>
+      <Link
+        to={"/portfolio"}
+        state={{ wallet_address: walletAddress }}>
+        View Profile
+      </Link>
 
       <br></br>
       <h1 id="title">🅿️ Proof of Work</h1>
@@ -137,7 +140,7 @@ const Minter = (props) => {
       </p>
 
 
-    </div>
+    </div >
   );
 };
 
