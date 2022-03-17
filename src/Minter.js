@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, BrowserRouter } from "react-router-dom";
 import {
   connectWallet,
   getCurrentWalletConnected,
@@ -101,9 +102,16 @@ const Minter = (props) => {
           <span>Connect Wallet</span>
         )}
       </button>
-      <button id="viewProfile">
+      
+      <button id="viewProfile" onClick={() => window.open('../templates/base.html')}>
           <span>View Profile</span>
       </button>
+      
+    {/* <BrowserRouter>
+      <Link to={{ pathname: "../templates/user.html" }} className="btn btn-primary">View Profile</Link>
+    </BrowserRouter> */}
+
+
       <br></br>
       <h1 id="title">🅿️ Proof of WORK</h1>
       <p>
