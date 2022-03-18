@@ -51,7 +51,7 @@ export const getCurrentWalletConnected = async () => {
       if (addressArray.length > 0) {
         return {
           address: addressArray[0],
-          status: "👆🏽 Enter details in the text-field above to generate your proof of work",
+          status: "👆🏽 Enter DAO payment address in the text-field above to generate your proof of work",
         };
       } else {
         return {
@@ -88,8 +88,8 @@ async function loadContract() {
   return new web3.eth.Contract(contractABI, contractAddress);
 }
 
-export const mintNFT = async (url, name, description, receiver) => {
-  if (url.trim() == "" || name.trim() == "" || description.trim() == "" || receiver.trim() == "") {
+export const mintNFT = async (url, name, description, receiver, transaction) => {
+  if (url.trim() === "" || name.trim() === "" || description.trim() === "" || receiver.trim() === "") {
     return {
       success: false,
       status: "❗Please make sure all fields are completed before minting.",
@@ -101,6 +101,7 @@ export const mintNFT = async (url, name, description, receiver) => {
   metadata.name = name;
   metadata.image = url;
   metadata.description = description;
+  metadata.transaction = transaction;
 
   const pinataResponse = await pinJSONToIPFS(metadata);
   if (!pinataResponse.success) {

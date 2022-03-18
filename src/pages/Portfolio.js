@@ -6,7 +6,11 @@ const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../contract-abi.json");
 const contractAddress = "0xfBB4044444E8ab9bc411E04b947fa5322470e8df"; // Proof (NNT) address
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-const web3 = createAlchemyWeb3(alchemyKey);
+const Web3 = require("web3");
+// const web3 = createAlchemyWeb3(alchemyKey); Temporarily not working (missing trie node)
+var web3 = new Web3(new Web3.providers.HttpProvider(
+    'https://ropsten.infura.io/v3/bf900044efef4598bc60cc7234cf4360'
+));
 
 
 const Portfolio = (props) => {
@@ -21,11 +25,20 @@ const Portfolio = (props) => {
         const balance = await contract.methods.balanceOf(wallet_address).call();
         setBalance(balance);
         var badges = [];
+        var txns = {};
         for (let i = 0; i < balance; i++) {
             console.log("i", i);
+            const id = await contract.methods.totalSupply().call();
+            console.log(id)
             const tokenId = await contract.methods.tokenOfOwnerByIndex(wallet_address, i).call()
             let tokenMetadataURI = await contract.methods.tokenURI(tokenId).call();
             const tokenMetadata = await fetch(tokenMetadataURI).then((response) => response.json());
+            if (txns[tokenMetadata["transaction"]] === 1) {
+                console.log("duplicated", tokenMetadata["transaction"]);
+                continue;
+            }
+            console.log("not duplicated", tokenMetadata["transaction"]);
+            txns[tokenMetadata["transaction"]] = 1;
             console.log("id", tokenMetadataURI);
             badges.push(
                 <div class="column">

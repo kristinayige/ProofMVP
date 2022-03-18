@@ -10,14 +10,11 @@ const MyMinter = (props) => {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [status, setStatus] = useState("");
-    console.log(props.imgUrl);
-    console.log(props.receiver);
-    console.log(props.txn);
     const url = props.imgUrl;
     const receiver = props.receiver;
-    const transaction = props.txn
+    const transaction = props.txn;
     const onMintPressed = async () => {
-        const { success, status } = await mintNFT(url, name, description, receiver);
+        const { success, status } = await mintNFT(url, name, description, receiver, transaction.hash);
         setStatus(status);
         if (success) {
             setName("");
