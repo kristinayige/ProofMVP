@@ -60,7 +60,6 @@ const Portfolio = (props) => {
                 <img src="/w3images/p3.jpg" alt="Bear"></img>
                 <h3>Some Other Work</h3>
                 <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
             </div>
 
 

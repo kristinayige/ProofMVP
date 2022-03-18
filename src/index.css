@@ -4,8 +4,27 @@ body {
   margin: 0;
   font-family: 'Rubik';
   color: #254cdd;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f1f1;
+}
+
+.header {
+  position: fixed;
+  top: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  background: rgb(38, 38, 141);
+  overflow: hidden;
+  transition: all 0.3s;
+  font-family: "Oswald", sans-serif;
+  order: 1;
+}
+
+.center {
+  margin: auto;
+  width: 1000px;
+  text-align: left;
+  padding: 10px;
 }
 
 code {
@@ -14,12 +33,19 @@ code {
 }
 
 .Minter {
-  max-width: 80vh;
-  max-height: 80vh;
-  padding: 60px 100px;
-  margin: 0 auto;
-  text-align: left;
+  width: 100%;
+  text-align: center;
+}
 
+.MinterBody {
+  max-width: 1000px;
+  text-align: left;
+}
+
+#daoinput {
+  width: 85%;
+  padding-top: 25px;
+  margin-right: 1%;
 }
 
 input {
@@ -29,6 +55,7 @@ input {
   border-bottom-style: groove;
   font-size: 16px;
   width: 100%;
+  background-color:  transparent;
   border-color: rgba(4, 4, 5, 0.1);
   line-height: 32px;
 }
@@ -38,6 +65,26 @@ input:focus {
   border-color: rgba(4, 4, 5, 0.4);
 }
 
+Link {
+  margin-top: -10px;
+}
+
+#DAO {
+  margin-top: 30px;
+}
+
+#status{
+  margin-bottom: -10px;
+}
+
+#portfolio {
+  margin-top: 30px;
+  margin-left: 50px;
+  text-align: left;
+  line-height: 16px;
+  color: azure;
+  font-size: 20px;
+}
 
 button {
   padding: 9px 16px;
@@ -60,7 +107,11 @@ button:hover {
 }
 
 #title {
-  padding-top: 32px;
+  padding-top: 70px;
+}
+
+#viewTxns {
+  margin-top: 20px;
 }
 
 .uploadFile {
@@ -73,10 +124,12 @@ button:hover {
 #walletButton {
   text-align: right;
   float:right;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 70px;
   line-height: 16px;
 }
-/*
+
 #walletButton:focus {
   outline:none;
   border: none;
@@ -85,7 +138,7 @@ button:hover {
 #walletButton:hover {
   outline:none;
   border :none;
-} */
+}
 
 #mintButton {
   margin-top: 40px;

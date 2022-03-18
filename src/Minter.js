@@ -69,6 +69,7 @@ const Minter = (props) => {
   const onTxnPressed = async () => {
     const txns = await getPayments('0x12bd9048b419838e25046040dcd297ab16850280', '0x41532c0decc835293dd1e3edd47eb5eb7a7677cf');
     setTransaction(txns);
+    console.log(txns);
   }
 
   const Txns = (props) => {
@@ -92,54 +93,55 @@ const Minter = (props) => {
 
   return (
     <div className="Minter">
-      <button id="walletButton" onClick={connectWalletPressed}>
-        {walletAddress.length > 0 ? (
-          "Connected: " +
-          String(walletAddress).substring(0, 6) +
-          "..." +
-          String(walletAddress).substring(38)
-        ) : (
-          <span>Connect Wallet</span>
-        )}
-      </button>
+      <header class="header">
+        <button id="walletButton" onClick={connectWalletPressed}>
+          {walletAddress.length > 0 ? (
+            "Connected: " +
+            String(walletAddress).substring(0, 6) +
+            "..." +
+            String(walletAddress).substring(38)
+          ) : (
+            <span>Connect Wallet</span>
+          )}
+        </button>
 
-      <Link
-        to={"/portfolio"}
-        state={{ wallet_address: walletAddress }}>
-        View Profile
-      </Link>
-
+        <div id="portfolio">
+          <Link
+            to={"/portfolio"}
+            state={{ wallet_address: walletAddress }}>
+            View Badges
+          </Link>
+        </div>
+      </header>
       <br></br>
-      <h1 id="title">🅿️ Proof of Work</h1>
-      <p>
-        Turn your wallet into Web3 work portfolio! Get NFTs for your work!
-      </p>
+      <div className="MinterBody" class="center">
+        <h1 id="title">🅿️ Proof</h1>
+        <p id="subtitle">
+          Turn your wallet into Web3 work portfolio! Get NFTs for your work!
+        </p>
 
+        <h2 id="DAO">✍️ Enter DAO Wallet Address: </h2>
+        <p id="subtitle">
+          Simply add the payment address of the DAO you are contributing!
+        </p>
+        <input
+          id="daoinput"
+          type="text"
+          placeholder="e.g. 0x000"
+          onChange={(event) => setDAOAddr(event.target.value)}
+        />
+        <button id="viewTxns" onClick={onTxnPressed}>
+          Get My Proof
+        </button>
 
-      <h2>✍️ Enter DAO Wallet Address: </h2>
-      <p>
-        Simply add your asset's link, name, and description, to mint NFTs for your work"
-      </p>
-      <input
-        type="text"
-        placeholder="e.g. 0x000"
-        onChange={(event) => setDAOAddr(event.target.value)}
-      />
-      <button id="viewTxns" onClick={onTxnPressed}>
-        Get My Proof
-      </button>
+        <p id="status" style={{ color: "red" }}>
+          {status}
+        </p>
 
-      <h1 id="title">🔥 My Web3 Work Portfolio</h1>
-
-      <div>
-        <Txns></Txns>
+        <div>
+          <Txns></Txns>
+        </div>
       </div>
-      <div class="swiper"></div>
-      <p id="status" style={{ color: "red" }}>
-        {status}
-      </p>
-
-
     </div >
   );
 };
