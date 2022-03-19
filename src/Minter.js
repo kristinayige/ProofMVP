@@ -12,11 +12,13 @@ import {
 
 import MyMinter from './Users';
 
+var ethereum_address = require('ethereum-address');
 const Minter = (props) => {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [dict, setTransaction] = useState({});
   const [DAOAddr, setDAOAddr] = useState("");
+  const [queryAddr, setQueryAddr] = useState("");
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -70,6 +72,19 @@ const Minter = (props) => {
     setTransaction(txns);
   }
 
+  let button;
+  if (queryAddr === "" || !ethereum_address.isAddress(queryAddr)) { // Check if the input is valid
+    button = <div>Go</div>;
+  } else {
+    button = <Link
+      className="queryRes"
+      to={"/portfolio"}
+      state={{ wallet_address: queryAddr }}>
+      Go
+    </Link>;
+  }
+
+
   const Txns = (props) => {
     const myString = dict;
     console.log(typeof (myString));
@@ -102,7 +117,6 @@ const Minter = (props) => {
             <span>Connect Wallet</span>
           )}
         </button>
-
         <div id="portfolio">
           <Link
             to={"/portfolio"}
@@ -112,11 +126,23 @@ const Minter = (props) => {
         </div>
       </header>
       <br></br>
+
       <div className="MinterBody" class="center">
         <h1 id="title">🅿️ Proof</h1>
         <p id="subtitle">
           Turn your wallet into Web3 work portfolio! Get NFTs for your work!
         </p>
+
+        <h2 id="DAO">👀 Check Proof badges in this wallet: </h2>
+        <input
+          id="daoinput"
+          type="text"
+          placeholder="e.g. 0x000"
+          onChange={(event) => setQueryAddr(event.target.value)}
+        />
+        <button id="viewTxns">
+          {button}
+        </button>
 
         <h2 id="DAO">✍️ Enter DAO Wallet Address: </h2>
         <p id="subtitle">
