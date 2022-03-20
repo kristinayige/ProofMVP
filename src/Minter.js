@@ -121,7 +121,7 @@ const Minter = (props) => {
           <Link
             to={"/portfolio"}
             state={{ wallet_address: walletAddress }}>
-            View Badges
+            View My Badges
           </Link>
         </div>
       </header>
