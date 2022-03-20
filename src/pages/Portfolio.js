@@ -34,12 +34,12 @@ const Portfolio = (props) => {
             let tokenMetadataURI = await contract.methods.tokenURI(tokenId).call();
             const tokenMetadata = await fetch(tokenMetadataURI).then((response) => response.json());
             if (txns[tokenMetadata["transaction"]] === 1) {
-                console.log("duplicated", tokenMetadata["transaction"]);
+                // console.log("duplicated", tokenMetadata["transaction"]);
                 continue;
             }
-            console.log("not duplicated", tokenMetadata["transaction"]);
+            // console.log("not duplicated", tokenMetadata["transaction"]);
             txns[tokenMetadata["transaction"]] = 1;
-            console.log("id", tokenMetadataURI);
+            // console.log("id", tokenMetadataURI);
             badges.push(
                 <div class="column">
                     <div class="content">
